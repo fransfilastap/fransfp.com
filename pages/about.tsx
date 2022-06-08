@@ -20,9 +20,9 @@ const About: NextPage = () => {
                     <article className="flex flex-col w-full space-y-4 md:w-2/3">
                         <section className="flex flex-col space-y-2">
                             <h5 className="py-1 text-xl font-extrabold text-black border-b-4 border-gray-700 dark:text-white max-w-fit">Work/Activity</h5>
-                            <p className="text-base font-semibold text-black dark:text-white">Hi,There! I'm Frans. I currently work as information technology officer in one of Indonesia Goverment Office. Through this website I want to share and "dump" anything I want.</p>
+                            <p className="text-base font-semibold text-black dark:text-white">Hi,There! I&apos;m Frans. I currently work as information technology officer in one of Indonesia Goverment Office. Through this website I want to share and &quot;dump&quot; anything I want.</p>
                             <p className="text-base font-semibold text-black dark:text-white">I love to get involved in digital transformation process anywhere I work (especially in goverment use case). I found joys in solving real-life problems with code.</p>
-                            <p className="text-base font-semibold text-black dark:text-white">While I'm not in coding mode, I'd love to play with My Kid, or grab my old analog camera to take some picture. </p>
+                            <p className="text-base font-semibold text-black dark:text-white">While I&apos;m not in coding mode, I&apos;d love to play with My Kid, or grab my old analog camera to take some picture. </p>
                         </section>
                         <section className="flex flex-col space-y-2">
                             <h5 className="py-1 text-xl font-extrabold text-black border-b-4 border-gray-700 dark:text-white max-w-fit">Bio</h5>

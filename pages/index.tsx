@@ -13,7 +13,7 @@ const Home: NextPage = () => {
       <div className="flex flex-col items-center h-[calc(85vh)]">
         <div className='flex flex-col items-center justify-center h-screen'>
           <h1 className='text-9xl md:text-[15rem] p-0 font-bold text-black dark:text-white'>Hello</h1>
-          <h5 className='text-2xl font-bold text-blue-500 dark:text-white'>I'm Frans Filasta Pratama</h5>
+          <h5 className='text-2xl font-bold text-blue-500 dark:text-white'>I&apos;m Frans Filasta Pratama</h5>
           <h5 className='text-black dark:text-white'>Full-stack Software Developer</h5>
         </div>
       </div>
