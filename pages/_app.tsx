@@ -2,7 +2,7 @@ import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-import * as ga from './lib/ga';
+import * as ga from '../lib/ga';
 import { AppProvider } from '../store/AppProvider';
 import { ThemeProvider } from 'next-themes';
 

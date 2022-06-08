@@ -2,8 +2,8 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import fs from "fs";
 import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
-import PostLayout from "../components/PostLayout";
-import { fetchPostContent } from "../lib/posts";
+import PostLayout from "../../components/PostLayout";
+import { fetchPostContent } from "../../lib/posts";
 import matter from "gray-matter";
 import yaml from 'js-yaml';
 import readingTime from "reading-time";

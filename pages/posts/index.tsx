@@ -1,9 +1,9 @@
 import { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import { useEffect, useRef } from "react";
-import { Layout } from "../components/Layout";
-import PostList from "../components/PostList";
-import { countPosts, listPostContent, PostContent } from "../lib/posts";
+import { Layout } from "../../components/Layout";
+import PostList from "../../components/PostList";
+import { countPosts, listPostContent, PostContent } from "../../lib/posts";
 
 type Props = {
   posts: PostContent[];

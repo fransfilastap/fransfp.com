@@ -1,6 +1,4 @@
 import { useTheme } from "next-themes";
-import { useContext } from "react";
-import { AppContext } from "../../store/app-context";
 
 const DarkModeToggle = () => {
     
