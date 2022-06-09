@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Image from 'next/image'
+import Link from 'next/link'
 import { Footer } from './Footer'
 import { Navigation } from './Navigation'
 
@@ -8,6 +8,10 @@ type Props = {
 }
 
 export const Layout = ({ children }: Props) => {
+
+    const handleMobileNavToggle = () => {
+    }
+    
     return (
         <div className='flex flex-col'>
             <Head>

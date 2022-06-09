@@ -1,13 +1,14 @@
 type Props = {
   active: boolean;
   onClick: () => void;
+  variant?: string;
 };
 export default function Burger({ active, onClick }: Props) {
   return (
-    <div className={"container " + (active ? "active" : "")} onClick={onClick}>
-      <div className={"meat meat-1"} />
-      <div className={"meat meat-2"} />
-      <div className={"meat meat-3"} />
+    <div className={"container " + (active ? "active z-[999999]" : "")} onClick={onClick}>
+      <div className={"meat meat-1 dark:bg-white bg-black"} />
+      <div className={"meat meat-2 dark:bg-white bg-black"} />
+      <div className={"meat meat-3 dark:bg-white bg-black"} />
       <style jsx>
         {`
           .container {
@@ -18,13 +19,12 @@ export default function Burger({ active, onClick }: Props) {
             top: 1rem;
             left: 1.25rem;
             z-index: 2;
-            background-color: rgba(255, 255, 255, 0.7);
+            background-color: rgba(255, 255, 255, 0);
           }
           .meat {
             position: absolute;
             width: 28px;
             height: 2px;
-            background: #222;
             top: calc(50% - 2px / 2);
             left: calc(50% - 28px / 2);
             transition: all 150ms ease-in;
@@ -51,18 +51,6 @@ export default function Burger({ active, onClick }: Props) {
           @media (min-width: 769px) {
             .container {
               display: none;
-            }
-          }
-
-          @media (prefers-color-scheme: dark) {
-            .meat{
-              background: #fff;
-            }
-          }
-
-          @media (prefers-color-scheme: light) {
-            .meat{
-              background: #222;
             }
           }
 

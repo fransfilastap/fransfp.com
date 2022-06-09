@@ -4,13 +4,14 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 import * as ga from '../lib/ga';
 import { AppProvider } from '../store/AppProvider';
-import { ThemeProvider } from 'next-themes';
+import { ThemeProvider, useTheme } from 'next-themes';
 
 function MyApp({ Component, pageProps }: AppProps) {
 
   const router = useRouter();
-  
+
   useEffect(() => {
+
     const handleRouteChange = (url: string) => {
       ga.pageview(url);
     };
