@@ -96,7 +96,7 @@ export const Navigation = () => {
             animate={isOpen ? "open" : "closed"}
             initial="closed"
             variants={variants}
-            className="fixed flex flex-col items-start justify-center w-full h-screen px-8 overflow-hidden rounded-tr-lg rounded-br-lg dark:bg-white/30 bg-black/50 backdrop-blur-3xl" >
+            className="fixed flex flex-col items-start justify-center w-full h-screen px-8 overflow-hidden bg-amber-500" >
             
             <Burger active={isOpen} onClick={
                 function (): void {
