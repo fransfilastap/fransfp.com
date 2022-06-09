@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://distracted-lumiere-549cfb.netlify.com
+
+# Sitemaps
+Sitemap: https://distracted-lumiere-549cfb.netlify.com/sitemap.xml
