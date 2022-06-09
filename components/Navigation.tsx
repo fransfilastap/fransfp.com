@@ -93,8 +93,9 @@ export const Navigation = () => {
         </header>
         <motion.div
             animate={isOpen ? "open" : "closed"}
+            initial="closed"
             variants={variants}
-            className="fixed top-0 left-0 flex flex-col items-start justify-center w-full h-screen px-8 overflow-hidden" >
+            className="fixed flex flex-col items-start justify-center w-full h-screen px-8 overflow-hidden" >
             
             <Burger active={isOpen} onClick={
                 function (): void {

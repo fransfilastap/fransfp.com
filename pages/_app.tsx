@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import * as ga from '../lib/ga';
 import { AppProvider } from '../store/AppProvider';
 import { ThemeProvider, useTheme } from 'next-themes';
+import { AnimatePresence, motion } from 'framer-motion';
 
 function MyApp({ Component, pageProps }: AppProps) {
 
@@ -24,7 +25,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <AppProvider>
       <ThemeProvider attribute="class">
-        <Component {...pageProps} />
+            <Component {...pageProps} />
         </ThemeProvider>
     </AppProvider>
   );

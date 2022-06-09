@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import {AnimatePresence, motion} from 'framer-motion'
 import Link from 'next/link'
 import { Footer } from './Footer'
 import { Navigation } from './Navigation'
@@ -9,9 +10,12 @@ type Props = {
 
 export const Layout = ({ children }: Props) => {
 
-    const handleMobileNavToggle = () => {
-    }
-    
+    const spring = {
+      type: "spring",
+      damping: 20,
+      stiffness: 100,
+      when: "afterChildren"
+    };
     return (
         <div className='flex flex-col'>
             <Head>
@@ -23,7 +27,14 @@ export const Layout = ({ children }: Props) => {
             </Head>
             <div className="flex flex-col">
                 <Navigation/>
-                <main className="flex-1">{children}</main>
+                <AnimatePresence>
+                    <motion.main
+                        transition={spring}
+                        initial={{ x: 300, opacity: 0 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        exit={{ x: -300, opacity: 0 }}
+                        className="flex-1">{children}</motion.main>
+                </AnimatePresence>
                 <Footer/>
             </div>
         </div> 

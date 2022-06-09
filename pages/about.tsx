@@ -34,7 +34,7 @@ const About: NextPage = () => {
                         </section>
                         <section className="flex flex-col space-y-2">
                             <h5 className="py-1 text-xl font-extrabold text-black border-b-4 border-gray-700 dark:text-white max-w-fit">I ❤️</h5>
-                            <p className="font-bold text-black">Art, Photography, Movies, Code.</p>
+                            <p className="text-black dark:text-white">Art, Photography, Movies, Code.</p>
                         </section>
                     </article>
                 </div>

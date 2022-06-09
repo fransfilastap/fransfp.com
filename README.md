@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d4945add-2548-413b-988a-66e4c593c5ad/deploy-status)](https://app.netlify.com/sites/distracted-lumiere-549cfb/deploys)
+
 This is a personal website of me [fransfp.com](https://fransfp.com). This project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
