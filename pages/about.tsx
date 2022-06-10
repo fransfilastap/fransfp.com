@@ -2,14 +2,12 @@ import { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import { Layout } from "../components/Layout";
+import BasicMeta from "../components/meta/BasicMeta";
 
 const About: NextPage = () => {
     return (
         <Layout>
-            <Head>
-                <title>Post - fransfp.com</title>
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
+            <BasicMeta title="About Me" />
             <div className="container mx-auto">
                 <div className="flex flex-col items-start justify-start mt-24 space-y-10 md:flex-row md:space-x-10">
                     <div className="w-full md:w-1/3">

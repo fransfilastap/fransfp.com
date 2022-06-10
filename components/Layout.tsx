@@ -1,8 +1,9 @@
 import Head from 'next/head'
 import {AnimatePresence, motion} from 'framer-motion'
-import Link from 'next/link'
 import { Footer } from './Footer'
 import { Navigation } from './Navigation'
+import { useTheme } from 'next-themes'
+import { useEffect, useMemo } from 'react'
 
 type Props = {
     children: React.ReactNode
@@ -17,6 +18,22 @@ const spring = {
     
 
 export const Layout = ({ children }: Props) => {
+
+    const { theme, setTheme } = useTheme();
+
+    useEffect(() => {
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            const newColorScheme = event.matches ? "dark" : "light";
+            setTheme(newColorScheme);
+            console.log(newColorScheme);
+        });
+    },[setTheme]);
+
+    useEffect(() => {
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            setTheme('dark');
+        }
+    },[]);
     
     return (
         <div className='flex flex-col'>
