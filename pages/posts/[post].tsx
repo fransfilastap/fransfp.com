@@ -14,7 +14,7 @@ export type Props = {
   slug: string;
   tags: string[];
   author: string;
-    description?: string;
+  description?: string;
   readingTime: string;
   source: MDXRemoteSerializeResult;
 };
@@ -74,7 +74,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         title: data.title,
         dateString: data.date,
         slug: data.slug,
-        description: "",
+        description: data.description,
         tags: data.tags,
         author: data.author,
         source: mdxSource,

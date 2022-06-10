@@ -3,6 +3,8 @@ import Head from "next/head";
 import BackButton from "./BackButton";
 import Date from "./Date";
 import { Layout } from "./Layout";
+import BasicMeta from "./meta/BasicMeta";
+import OpenGraphMeta from "./meta/OpenGraphMeta";
 import ReadingTime from "./ReadingTime";
 
 type Props = {
@@ -22,18 +24,11 @@ const PostLayout = ({ title, date, slug, tags, author, description, children, re
 
     return (
         <Layout>
-            <Head>
-                <title>{title}</title>
-                <meta name="description" content={description} />
-                <meta property="og:title" content={title} />
-                <meta property="og:description" content={description} />
-                <meta property="og:type" content="article" />
-                <meta property="og:url" content={`https://fransfp.com/${slug}`} />
-                <meta property="og:image" content={`https://fransfp.com/${slug}/og.jpg`} />
-            </Head>
+            <BasicMeta title={title} description={description} url={`/posts/${slug}`} />
+            <OpenGraphMeta title={title} description={description} url={`/posts/${slug}`} />
             <div className="container flex flex-col mx-auto mt-28 ">
                 <div className="flex flex-col items-start justify-start w-full mb-10">
-                    <BackButton label="Kembali"/>
+                    <BackButton label="Go back"/>
                 </div>
                 <article className="flex flex-col">
                     <section>

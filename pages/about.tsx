@@ -29,8 +29,8 @@ const About: NextPage = () => {
                             <p className="flex flex-row space-x-3"><span className="font-extrabold">1993</span> <span>Born in Sungai Liat, Bangka</span></p>
                             <p className="flex flex-row space-x-3"><span className="font-extrabold">Late 2014</span> <span>Got My Bachelor degree in Information System from Sriwijaya University.</span></p>
                             <p className="flex flex-row space-x-3"><span className="font-extrabold">2015</span> <span>Got My First Full-time job as engineer at Huawei Services.</span></p>
-                            <p className="flex flex-row space-x-3"><span className="font-extrabold">2016</span> <span>Left Huawei Service, and Got Hired in XL Axiata as a Middleware Developer.</span></p>
-                            <p className="flex flex-row space-x-3"><span className="font-extrabold">2018 - Now</span> <span>Left XL Axiata, and serve the nation as Information Technlogy officer.</span></p>
+                            <p className="flex flex-row space-x-3"><span className="font-extrabold">2016</span> <span>Work at XL Axiata as a Middleware Developer.</span></p>
+                            <p className="flex flex-row space-x-3"><span className="font-extrabold">2018 - Now</span> <span>Serve the nation as Information Technlogy officer.</span></p>
                         </section>
                         <section className="flex flex-col space-y-2">
                             <h5 className="py-1 text-xl font-extrabold text-black border-b-4 border-gray-700 dark:text-white max-w-fit">I ❤️</h5>

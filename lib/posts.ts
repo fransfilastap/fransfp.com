@@ -39,6 +39,7 @@ export function fetchPostContent(): PostContent[] {
       const matterData = matterResult.data as {
         date: string;
         title: string;
+        description: string;
         tags: string[];
         slug: string;
         fullPath: string;
@@ -48,8 +49,6 @@ export function fetchPostContent(): PostContent[] {
       matterData.readingTime = readingTime(matterResult.content).text;
 
       const slug = fileName.replace(/\.mdx$/, "");
-
-      console.log(slug, matterData.slug);
 
       // Validate slug string
       if (matterData.slug !== slug) {

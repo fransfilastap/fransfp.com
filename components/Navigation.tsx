@@ -7,15 +7,24 @@ import WebLogo from "./WebLogo";
 import Link from "next/link";
 
 const variants = {
-  open: { opacity: 1, x: 0, zIndex: 999999,transition: {
-      
-      staggerChildren: 0.5,
+  open: {
+    opacity: 1,
+    x: 0,
+    zIndex: 999999,
+    transition: {  
+      staggerChildren: 0.2,
       staggerDirection: -1
-    } },
-  closed: { opacity: 0,zIndex: -1, x: "-100%",transition: {
-      staggerChildren: 0.5,
+    }
+  },
+  closed: {
+    opacity: 0,
+    zIndex: -1,
+    x: "-100%",
+    transition: {
+      staggerChildren: 0.2,
       staggerDirection: 1
-    } },
+    }
+  },
 }
 
 const burgerVariants = {
@@ -45,7 +54,7 @@ const itemVariants = {
     y: 0,
     opacity: 1,
     transition: {
-      y: { stiffness: 1000, velocity: 100 }
+      y: { stiffness: 1000, velocity: 200 }
     }
   },
   closed: {
@@ -54,7 +63,7 @@ const itemVariants = {
     transition: {
       y: { stiffness: 1000 }
     }
-  }
+  },
 };
 
 export const Navigation = () => {
@@ -92,11 +101,11 @@ export const Navigation = () => {
                 </div>
             </div>
         </header>
-        <motion.div
+      <motion.div
             animate={isOpen ? "open" : "closed"}
             initial="closed"
             variants={variants}
-            className="fixed flex flex-col items-start justify-center w-full h-screen px-8 overflow-hidden bg-amber-500" >
+            className="fixed flex flex-col items-end justify-center w-full h-screen px-8 overflow-hidden bg-amber-600" >
             
             <Burger active={isOpen} onClick={
                 function (): void {
@@ -105,15 +114,15 @@ export const Navigation = () => {
                 }}
             />
 
-            <motion.div variants={sideVariants} className="flex flex-col space-y-7">
+            <motion.div variants={sideVariants} className="flex flex-col space-y-2">
                 <Link href="/">
-                    <motion.a variants={itemVariants} className="text-6xl font-bold text-black dark:text-white" onClick={handleClick}>Home</motion.a>
+                    <motion.a variants={itemVariants} className="text-6xl font-bold transition duration-200 ease-in-out text-white/75 hover:text-white" onClick={handleClick}>Home</motion.a>
                 </Link>
                 <Link href="/about">
-                    <motion.a variants={itemVariants} className="text-6xl font-bold text-black dark:text-white" onClick={handleClick}>About</motion.a>
+                    <motion.a variants={itemVariants} className="text-6xl font-bold transition duration-200 ease-in-out text-white/75 hover:text-white" onClick={handleClick}>About</motion.a>
                 </Link>
                 <Link href="/posts">
-                    <motion.a variants={itemVariants} className="text-6xl font-bold text-black dark:text-white" onClick={handleClick}>Posts</motion.a>
+                    <motion.a variants={itemVariants} className="text-6xl font-bold transition duration-200 ease-in-out text-white/75 hover:text-white" onClick={handleClick}>Posts</motion.a>
                 </Link>
             </motion.div>
 

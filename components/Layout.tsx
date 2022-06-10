@@ -8,14 +8,16 @@ type Props = {
     children: React.ReactNode
 }
 
-export const Layout = ({ children }: Props) => {
-
-    const spring = {
+const spring = {
       type: "spring",
       damping: 20,
       stiffness: 100,
       when: "afterChildren"
     };
+    
+
+export const Layout = ({ children }: Props) => {
+    
     return (
         <div className='flex flex-col'>
             <Head>
