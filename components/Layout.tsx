@@ -25,14 +25,19 @@ export const Layout = ({ children }: Props) => {
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
             const newColorScheme = event.matches ? "dark" : "light";
             setTheme(newColorScheme);
-            console.log(newColorScheme);
         });
     },[setTheme]);
 
     useEffect(() => {
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            setTheme('dark');
+        if (localStorage.getItem('theme')) {
+            setTheme(localStorage.getItem('theme') as string);
         }
+        else {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                setTheme('dark');
+            }
+        }
+        
     },[]);
     
     return (
@@ -46,14 +51,7 @@ export const Layout = ({ children }: Props) => {
             </Head>
             <div className="flex flex-col">
                 <Navigation/>
-                <AnimatePresence>
-                    <motion.main
-                        transition={spring}
-                        initial={{ x: 300, opacity: 0 }}
-                        animate={{ x: 0, opacity: 1 }}
-                        exit={{ x: -300, opacity: 0 }}
-                        className="flex-1">{children}</motion.main>
-                </AnimatePresence>
+                <main className='flex-1'>{children}</main>
                 <Footer/>
             </div>
         </div> 
