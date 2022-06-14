@@ -1,3 +1,4 @@
+import {motion} from 'framer-motion'
 import { PostContent } from "../lib/posts";
 import Pagination from "./Pagination";
 import PostItem from "./PostItem";
@@ -14,7 +15,7 @@ type Props = {
 
 const PostList = ({ posts, pagination }: Props) => { 
     return (
-        <div className="flex flex-col min-h-screen px-2 mt-2 space-y-5">
+        <div className="flex flex-col w-full min-h-screen px-2 mt-2 space-y-5">
             {posts.map(post => (
                 <PostItem key={post.slug} post={post} />
             ))}

@@ -17,7 +17,7 @@ const NavigationItem = ({ href, label }: Props) => {
 
     return (
         <Link href={href}>
-            <a className={`hidden ${styles['navigation-item']} md:block text-black font-semibold dark:text-white px-2 py-1 transition-all ease-in-out duration-100 ${ (router.pathname === href) || ( href === '/' ? false : router.asPath.includes(href) )  ? styles['navigation-item__active']:''}` }>
+            <a className={`hidden ${styles['navigation-item']} font-serif md:block text-black font-semibold dark:after:bg-white dark:hover:text-black dark:text-white px-2 py-1 transition-all ease-in-out duration-100 ${ (router.pathname === href) || ( href === '/' ? false : router.asPath.includes(href) )  ? `${styles['navigation-item__active']} dark:text-black`:''}` }>
                {label}
             </a>
         </Link>

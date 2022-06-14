@@ -1,73 +1,35 @@
 import { motion } from 'framer-motion'
 import type { NextPage } from 'next'
-import dynamic from 'next/dynamic'
+import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { Layout } from '../components/Layout'
 import BasicMeta from '../components/meta/BasicMeta'
 import OpenGraphMeta from '../components/meta/OpenGraphMeta'
 import NoSSR from '../components/NoSSR'
 import Config from '../lib/config'
-
-const url = process.env.NEXT_SITE_URL || Config.site_url
+import myFoto from '../public/images/me-bw.jpg'
+import styles from './index.module.css'
 
 const variants = {
-  visible: {
-      transition: {
-        staggerChildren: 0.025
-      }
-    }
-};
-
-
-type Props = {
-  text: string,
-  tag: keyof JSX.IntrinsicElements,
-  className?: string,
-  children?: React.ReactNode
+  show: {
+    opacity: 1,
+    y:0,
+    transition: {
+      duration: 0.5,
+      ease: 'easeInOut',
+    },
+  },
+  hide: {
+    opacity: 0.1,
+    y: '10px',
+    transition: {
+      duration: 0.5,
+      ease: 'easeInOut',
+    },
+  }
 }
 
-const AnimatedText = ({ text,tag,className, children }: Props) => {
-
-  const itemVariants = {
-    hidden: {
-      y: "1000%",
-        opacity: 0,
-        transition: { ease: [0.455, 0.03, 0.515, 0.955], duration: 0.85 }
-      },
-      visible: {
-        y: 0,
-        opacity: 1,
-        transition: { ease: [0.455, 0.03, 0.515, 0.955], duration: 0.75 }
-      }
-  }
-
-  const splitWords = text.split(" ")
-  const letters = []
-
-  for (const [, item] of splitWords.entries()) {
-    letters.push(item.split(""))
-  }
-
-  letters.map((item, _index) => {
-    return item.push("\u00A0")
-  });
-
-  const Tag = tag;
-
-  return (
-      <Tag>
-      {letters.map((item, index) => {
-        return (
-          item.flatMap((letter, _index) => {
-            return (
-              <motion.span key={_index+index} variants={itemVariants} className={className}>{letter}</motion.span>
-            )
-          })
-        )
-      })}
-    </Tag>
-  )
-}
+const url = process.env.NEXT_SITE_URL || Config.site_url
 
 const Home: NextPage = () => {
 
@@ -86,18 +48,16 @@ const Home: NextPage = () => {
     <Layout>
       <BasicMeta />
       <OpenGraphMeta />
-      <div className="flex flex-col items-center h-[calc(85vh)]">
-        <div className='flex flex-col items-center justify-center w-full min-h-screen'>
-          <motion.div variants={variants} initial="hidden" animate={visible?"visible":"hidden"} className='container mx-4'>
-            <NoSSR>
-              <AnimatedText tag='h1' className='text-7xl md:text-[15rem] font-bold text-black dark:text-amber-500' text="Hello" />
-              <AnimatedText tag='h5' className='text-7xl md:text-[13rem] font-bold text-black dark:text-amber-500' text="I'm Frans" />
-              <AnimatedText tag='p' className='text-2xl font-bold text-black md:text-3xl md:ml-4 dark:text-amber-500' text="Full-stack Software Developer" />
-            </NoSSR>
-            {/* <h5 className='ml-2 text-4xl font-bold text-black md:ml-4 dark:text-white'>I&apos;m Frans Filasta Pratama</h5>
-            <h5 className='ml-2 text-2xl text-black md:ml-4 dark:text-white'>Full-stack Software Developer</h5> */}
-          </motion.div>
-        </div>
+      <div className={`w-full flex flex-col justify-center items-center min-h-screen px-20 py-20 `}>
+          <NoSSR>
+            <motion.h5 variants={variants} initial="hide" animate={visible?'show':'hide'} className='font-display font-bold text-black md:text-[10rem] text-7xl'>Born to Code</motion.h5>
+          <motion.svg className={'absolute -z-10 right-5 w-60 h-auto'}  viewBox="0 0 181 181" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M139.764 149.57L14.9042 103.994L116.803 18.6507L139.764 149.57Z" fill="#51DA7F" stroke="black"/>
+            <path d="M112.873 100.371L49.7331 104.113L108.48 41.7804L112.873 100.371Z" fill="#8E3AE2" stroke="black"/>
+            <path d="M108.477 41.4306L117.6 18.0293" stroke="black" strokeLinecap="round"/>
+            <path d="M47.4952 104.511H14.7324L139.33 150.18L113.021 100.043L47.4952 104.511Z" fill="#EDB72B" stroke="black" strokeLinecap="round"/>
+            </motion.svg>
+          </NoSSR>
       </div>
     </Layout>
   )

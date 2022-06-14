@@ -1,0 +1,22 @@
+.ffp{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFE8DC;
+    background-image: url(../public/images/me-bw.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    filter: hue-rotate(180deg);
+}
+
+@media screen and (max-width: 768px) {
+    .ffp{
+        height: 80vh;
+        width: 90%;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding-top: 2rem;
+    }
+}

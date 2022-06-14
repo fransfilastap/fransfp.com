@@ -24,7 +24,7 @@ const DarkModeToggle = () => {
 
 
     return (
-        <div className="flex items-center justify-center">
+        <div className="absolute border border-black bottom-4 right-6">
             <button className="px-4 py-2 font-semibold bg-transparent hover:border-transparent" onClick={preferenceChangeHandler}>
                 {theme === 'light' ? dark : light}
             </button>

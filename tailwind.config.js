@@ -5,6 +5,10 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    fontFamily: {
+      display: ["Krona One", "sans-serif"],
+      body: ["DM Sans", "sans-serif"],
+    },
     container: {
       center: true,
       padding: {

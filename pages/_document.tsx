@@ -28,7 +28,7 @@ export default class MyDocument extends Document {
                         }}
                     />
                 </Head>
-                <body className='bg-stone-50 dark:bg-black'>
+                <body className='bg-white dark:bg-black'>
                     <Main />
                     <NextScript />
                 </body>

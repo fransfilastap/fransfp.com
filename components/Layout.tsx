@@ -4,17 +4,11 @@ import { Footer } from './Footer'
 import { Navigation } from './Navigation'
 import { useTheme } from 'next-themes'
 import { useEffect, useMemo } from 'react'
+import NoSSR from './NoSSR'
 
 type Props = {
     children: React.ReactNode
 }
-
-const spring = {
-      type: "spring",
-      damping: 20,
-      stiffness: 100,
-      when: "afterChildren"
-    };
     
 
 export const Layout = ({ children }: Props) => {
@@ -22,13 +16,14 @@ export const Layout = ({ children }: Props) => {
     const { theme, setTheme } = useTheme();
 
     useEffect(() => {
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+        /* window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
             const newColorScheme = event.matches ? "dark" : "light";
             setTheme(newColorScheme);
-        });
+        }); */
+        setTheme("light");
     },[setTheme]);
 
-    useEffect(() => {
+    /* useEffect(() => {
         if (localStorage.getItem('theme')) {
             setTheme(localStorage.getItem('theme') as string);
         }
@@ -38,7 +33,7 @@ export const Layout = ({ children }: Props) => {
             }
         }
         
-    },[]);
+    },[]); */
     
     return (
         <div className='flex flex-col'>
@@ -50,7 +45,7 @@ export const Layout = ({ children }: Props) => {
                 <meta name="theme-color" content="#fff" />
             </Head>
             <div className="flex flex-col">
-                <Navigation/>
+                <NoSSR><Navigation/></NoSSR>
                 <main className='flex-1'>{children}</main>
                 <Footer/>
             </div>
