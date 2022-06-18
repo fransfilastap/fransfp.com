@@ -1,8 +1,8 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useContext } from "react";
 import { motion } from "framer-motion";
-import WebLogo from "./WebLogo";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import MenuItem from "./MenuItem";
+import { AppContext } from "../store/app-context";
 
 const menuContainerVariants = {
   open: {
@@ -23,15 +23,6 @@ const menuContainerVariants = {
     }
   },
 }
-const itemVariants = {
-  open: {
-    opacity: 1,
-    y: 0,
-  },
-  closed: {
-    opacity: 0,
-    y: -20,},
-};
 
 const headerVariants = {
   open: {
@@ -52,46 +43,23 @@ const headerVariants = {
 
 const logoVariants = {
   open: {
-    backgroundColor: "#fff",
+    color: "#fff",
   },
   closed: {
-    backgroundColor: "#000",
-  }
-}
-
-const burgerVariants = {
-  open: {
-    
+    color: "rgb(236 72 153)",
   }
 }
 
 export const Navigation = () => {
 
-  const [isOpen, setIsOpen] = React.useState<boolean>(false);
-  const router = useRouter();
-
-  const handleClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    const target = e.target as HTMLElement;
-    const url = target.getAttribute("href");
-
-    setIsOpen(!isOpen);
-        setTimeout(() => {
-           router.push(url!);
-    }, 1000);
-    
-        //document.body.style.overflow = 'unset';
-      
-      
-
-    }
+    const { menuOpen, toggleMenu} = useContext(AppContext)
 
     return <React.Fragment>
-        <motion.header initial="closed" animate={isOpen?'open':'closed'} variants={headerVariants} className="fixed z-50 flex flex-wrap items-center justify-center w-full px-2 py-4 dark:bg-black">
+        <motion.header initial="closed" animate={menuOpen?'open':'closed'} variants={headerVariants} className="fixed z-50 flex flex-wrap items-center justify-center w-full px-2 py-2 ">
                 <div className="flex flex-wrap items-center justify-between w-full pl-4 md:px-20">
                     <div className="flex items-center space-x-9">
                         <Link href="/">
-                          <motion.a variants={logoVariants} className={ `font-display px-2 py-1 -ml-3 text-xl font-extrabold rounded-none md:ml-1` }>
+                          <motion.a variants={logoVariants} className={ `uppercase font-display px-2 py-1 -ml-3 text-xl font-extrabold md:ml-1` }>
                               FFP
                           </motion.a>
                       </Link>
@@ -101,15 +69,11 @@ export const Navigation = () => {
               <motion.button variants={{
                 open: {
                   color: '#fff',
-                  backgroundColor: '#000',
                 },
                 closed: {
                   color: '#000',
-                  backgroundColor: '#fff',
                 }
-              }} onClick={() => {
-                setIsOpen(!isOpen);
-                        }} className="relative flex flex-row items-center justify-center h-10 px-2 py-1 space-x-2 overflow-hidden font-serif text-2xl font-bold border-2 border-black rounded-full">
+              }} onClick={toggleMenu} className="relative flex flex-row items-center justify-center h-10 space-x-2 overflow-hidden font-serif text-xl font-bold">
                           <div className="flex flex-col items-center justify-center font-display">
                   <motion.span  variants={
                     {
@@ -134,7 +98,7 @@ export const Navigation = () => {
                             <motion.span variants={
                     {
                       open: {
-                        y: '-60%',
+                        y: '-50%',
                         opacity: 1,
                         transition: {
                           duration: 0.5,
@@ -152,7 +116,7 @@ export const Navigation = () => {
                     {
                       open: {
                         rotate: '-45deg',
-                        translateY: '5.5px',
+                        translateY: '5.8px',
                         backgroundColor: '#fff',
                         transition: {
                           duration: 0.5,
@@ -173,7 +137,7 @@ export const Navigation = () => {
                     {
                       open: {
                         rotate: '45deg',
-                        translateY: '-5.5px',
+                        translateY: '-5.8px',
                         backgroundColor: '#fff',
                         transition: {
                           duration: 0.5,
@@ -196,21 +160,36 @@ export const Navigation = () => {
                 </div>
         </motion.header>
       <motion.div
-            animate={isOpen ? "open" : "closed"}
+            animate={menuOpen ? "open" : "closed"}
             initial="closed"
             variants={menuContainerVariants}
-            className="fixed flex flex-col items-center justify-center w-full h-screen overflow-hidden origin-top bg-black " >
-            <div className="container flex flex-col items-end space-y-2 ">
-                <Link href="/" passHref>
-                    <motion.a variants={itemVariants} className="text-5xl font-normal transition duration-200 ease-in-out font-display md:text-9xl text-white/30 hover:text-white" onClick={handleClick}>Home</motion.a>
-                </Link>
-                <Link href="/about" passHref>
-                    <motion.a variants={itemVariants} className="text-5xl font-normal transition duration-200 ease-in-out font-display md:text-9xl text-white/30 hover:text-white" onClick={handleClick}>About Me</motion.a>
-                </Link>
-                <Link href="/posts" passHref>
-                    <motion.a variants={itemVariants} className="text-5xl font-normal transition duration-200 ease-in-out font-display md:text-9xl text-white/30 hover:text-white" onClick={handleClick}>Posts</motion.a>
-                </Link>
-        </div>
+            className={`fixed flex flex-col items-center justify-center w-full h-screen pr-4 overflow-hidden origin-top bg-black/80 backdrop-blur-3xl md:p-0`} >
+        
+        <motion.div variants={{
+          open: {
+            scaleY: 1,
+            transition: {
+              staggerChildren: 0.1,
+              when:"beforeChildren",
+              type: "spring",
+            }
+          },
+          closed: {
+            scaleY: 0,
+            transition: {
+              staggerChildren: 0.1,
+              when:"afterChildren",
+              type: "spring",
+            }
+          }
+          
+              }
+            } className="container flex flex-col items-end max-h-screen py-20 space-y-2 overflow-y-scroll origin-top">
+                <MenuItem href="/" label="Home" />
+                <MenuItem href="/about" label="About" />
+                <MenuItem href="/contact" label="Contact" />
+                <MenuItem href="/posts" label="Blog" />
+            </motion.div>
         </motion.div>
     </React.Fragment>;
 }

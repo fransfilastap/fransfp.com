@@ -35,6 +35,11 @@ function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
     
     const handleRouteChange = (url: string) => {
+      window.scroll({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      });
       ga.pageview(url);
       /* setTimeout(() => {
         setIsLoading(true);
