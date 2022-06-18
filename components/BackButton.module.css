@@ -1,0 +1,27 @@
+.back{
+    position: relative;
+    color: #000;
+    transition: color 0.3s ease-in-out;
+}
+
+.back::after {
+  content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    clip-path: circle(0% at left);
+    transition: clip-path 0.5s ease-in-out;
+    z-index: -1;
+    border-radius: 30px;
+}
+
+.back:hover{
+    color: #fff;
+}
+
+.back:hover::after {
+    clip-path: circle(140% at left);
+}

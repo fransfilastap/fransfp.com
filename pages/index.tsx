@@ -6,7 +6,7 @@ import { Layout } from '../components/Layout'
 import BasicMeta from '../components/meta/BasicMeta'
 import OpenGraphMeta from '../components/meta/OpenGraphMeta'
 import Config from '../lib/config'
-import myFoto from '../public/images/me-bw.jpg'
+import myFoto from '../components/assets/images/me-bw.jpg'
 
 
 
@@ -16,8 +16,6 @@ type HeroTextProps = {
 
 const HeroText = ({ children }: HeroTextProps) => {
   const [isVisible, setIsVisible] = useState(false)
-  const { scrollY } = useViewportScroll()
-  const x = useTransform(scrollY, [0, 300, 1000], [0, -800, -1000])
   const ref = useRef<HTMLHeadingElement>(null)
 
   const heroVariants = {
@@ -26,7 +24,6 @@ const HeroText = ({ children }: HeroTextProps) => {
       transition: {
         duration: 0.5,
         ease: 'easeInOut',
-        delay: 0.5,
       },
     },
     hide: {
@@ -42,11 +39,11 @@ const HeroText = ({ children }: HeroTextProps) => {
     setTimeout(() => {
       setIsVisible(true)
     }
-      , 1000)
+      , 300)
   }, [ref])
 
   return (
-    <motion.h5 ref={ref} style={{y:x}} variants={heroVariants} initial="hide" animate={isVisible ? 'show' : 'hide'} className='w-full md:static z-30 font-display origin-bottom font-bold text-yellow-400 md:text-[15rem] leading-[4rem] text-[4rem] text-center md:leading-[10rem]'>{children}<span>.</span></motion.h5>
+    <motion.h5 ref={ref} variants={heroVariants} initial="hide" animate={isVisible ? 'show' : 'hide'} className='w-full md:static font-display origin-bottom font-bold text-lime-500 md:text-[9rem] leading-[4rem] text-[6rem] text-center md:leading-[10rem]'>{children}<span>.</span></motion.h5>
   )
 }
 
@@ -97,7 +94,7 @@ const IntroductionElement = ({ children }: IntroProps) => {
 
 
   return (
-    <motion.p ref={ ref } animate={controls} variants={variants} initial="hidden" className='min-h-[20rem] text-[2.5rem] leading-[2.4rem] md:leading-[6rem] font-bold text-center md:text-justity break-words text-green-500 md:text-[6rem] font-display'>{children}.</motion.p>
+    <motion.p ref={ ref } animate={controls} variants={variants} initial="hidden" className='container min-h-[20rem] text-[1.7rem] leading-[2rem] md:leading-[6rem] font-bold text-justify break-words text-green-500 md:text-[4.5rem] font-display'>{children}.</motion.p>
   )
 
 }
@@ -105,48 +102,34 @@ const IntroductionElement = ({ children }: IntroProps) => {
 
 const Home: NextPage = () => {
 
-  const variants = {
-    darken: {
-      backgroundColor: '#000',
-      transition: {
-        duration: 0.5,
-        ease: 'easeInOut',
-      }
-    },
-    lighten: {
-      backgroundColor: '#fff',
-      transition: {
-        duration: 0.5,
-        ease: 'easeInOut',
-      }
-    }
-  }
-
   const { scrollY } = useViewportScroll()
-  const controls = useAnimation()
-  
-  useEffect(() => {
-    if (scrollY.get() > 500) {
-      console.log('darken')
-      controls.start('darken')
-    }
-  }, [controls,scrollY])
+  const mastheadRef = useRef<HTMLDivElement>(null)
+  const ref = useRef<HTMLDivElement>(null)
+
+  const mhY = useTransform(scrollY, [0, 1000], [0, -800])
+
 
   return (
     <Layout>
       <BasicMeta />
       <OpenGraphMeta />
-      <motion.div variants={ variants } initial="lighten" animate={controls} className={`w-full flex flex-col justify-start items-center h-[500vh] px-4 md:px-20 overflow-x-hidden }`}>
-        <section className='flex flex-col items-center justify-center w-full h-screen'>
-          <HeroText>Hello</HeroText>
-          <h5 className='text-5xl font-bold font-display after:mix-blend-difference'>I’m a full-stack developer.</h5>
-        </section>
+        <motion.section ref={mastheadRef} className='flex flex-col items-center justify-center w-full h-screen -z-30'>
+          <video autoPlay={true} muted playsInline loop className='absolute top-0 left-0 object-cover w-full h-full -z-10 filter brightness-50'>
+            <source src="pexels-oleg-lehnitsky-8323975.mp4" type="video/mp4" />
+          </video>
+          <HeroText>FFP</HeroText>
+          <h5 className='text-2xl font-bold text-center text-white md:text-5xl font-display'>I’m a full-stack developer.</h5>
+        </motion.section>
+        <motion.section ref={ref} style={{ y: mhY }} className='flex flex-col items-center justify-center py-32 bg-white'>
+          <IntroductionElement>My Name is <br/><span className='text-pink-500'>Frans Filasta Pratama</span>.<br/> I'm full-stack developer based in <span className='text-black underline'>Jakarta, Indonesia</span></IntroductionElement>
+        </motion.section>
+      <div className='container w-full'>
+        <motion.img
+        src={myFoto.src}
+        className='z-10 w-full h-auto rounded-3xl -mt-96'
         
-        {/* <div className='flex flex-col md:space-y-[3rem] md:mt-[10rem] mt-[5rem] h-screen'>
-          <IntroductionElement><span className='text-pink-500'>FFP</span> is full-stack developer based in Jakarta, Indonesia</IntroductionElement>
-          <IntroductionElement><span className='text-pink-500'>I</span> do Laravel, Spring, React, Flutter, etc</IntroductionElement>
-          </div> */}
-      </motion.div>
+      />
+      </div>
     </Layout>
   )
 }

@@ -47,8 +47,8 @@ const FFPCard = ({ title, description, image, children }: Props) => {
     },[]);
     
     return (
-        <motion.div initial="hidden" variants={variants} animate={isVisible ? 'visible':'hidden' } className="w-full p-4 rounded-3xl bg-violet-600 min-h-[15rem]">
-            <motion.h5 variants={itemsVariants} className="font-bold text-white font-display dark:text-black text-7xl">{title}</motion.h5>
+        <motion.div initial="hidden" variants={variants} animate={isVisible ? 'visible':'hidden' } className="w-full p-4 rounded-3xl bg-lime-500 min-h-[15rem]">
+            <motion.h5 variants={itemsVariants} className="font-bold text-black font-display text-7xl">{title}</motion.h5>
         </motion.div>
     )
 }

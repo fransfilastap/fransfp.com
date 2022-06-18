@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+
+const withVideo = require('next-video');
+
+const nextConfig = withVideo && {
   reactStrictMode: true,
 }
 

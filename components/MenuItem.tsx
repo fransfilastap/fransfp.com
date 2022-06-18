@@ -9,8 +9,6 @@ type Props ={
     label: string;
 }
 
-const classNames = 'text-5xl font-extrabold transition duration-300 ease-in-out font-display md:text-9xl hover:text-green-500';
-
 const MenuItem = ({ href, label }: Props) => {
 
     const { menuOpen, toggleMenu } = useContext(AppContext);
@@ -50,7 +48,7 @@ const MenuItem = ({ href, label }: Props) => {
 
     return (
         <Link href={href} passHref>
-            <motion.a ref={ref} variants={itemVariants} className={`${classNames} ${isActive(href) ? 'text-green-500':'text-pink-500'}`} onClick={handleClick}>
+            <motion.a ref={ref} variants={itemVariants} className={`text-[2rem] uppercase font-extrabold transition duration-300 ease-in-out font-display md:text-[6rem] hover:text-lime-300 hover:underline hover:underline-offset-2 ${isActive(href) ? 'text-lime-500 underline underline-offset-1':'text-lime-100'}`} onClick={handleClick}>
                 {label}
             </motion.a>
         </Link>

@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     fontFamily: {
       display: ["Krona One", "sans-serif"],
-      body: ["DM Sans", "sans-serif"],
+      body: ["Montserrat", "sans-serif"],
     },
     container: {
       center: true,
