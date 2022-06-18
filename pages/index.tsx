@@ -121,7 +121,7 @@ const Home: NextPage = () => {
           <h5 className='text-2xl font-bold text-center text-white md:text-5xl font-display'>I’m a full-stack developer.</h5>
         </motion.section>
         <motion.section ref={ref} style={{ y: mhY }} className='flex flex-col items-center justify-center py-32 bg-white'>
-          <IntroductionElement>My Name is <br/><span className='text-pink-500'>Frans Filasta Pratama</span>.<br/> I'm full-stack developer based in <span className='text-black underline'>Jakarta, Indonesia</span></IntroductionElement>
+          <IntroductionElement>My Name is <br/><span className='text-pink-500'>Frans Filasta Pratama</span>.<br/> I&apos;m full-stack developer based in <span className='text-black underline'>Jakarta, Indonesia</span></IntroductionElement>
         </motion.section>
       <div className='container w-full'>
         <motion.img
