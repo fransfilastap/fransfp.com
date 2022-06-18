@@ -46,7 +46,7 @@ export const Layout = ({ children }: Props) => {
             </Head>
             <div className="flex flex-col">
                 <NoSSR><Navigation/></NoSSR>
-                <main className='flex-1'>{children}</main>
+                <main>{children}</main>
                 <Footer/>
             </div>
         </div> 

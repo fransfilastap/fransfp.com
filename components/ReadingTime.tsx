@@ -6,7 +6,7 @@ type Props = {
 
 const ReadingTime = ({ readingTime }: Props) => {
     return (
-        <p className="px-2 py-1 text-xs text-white bg-black rounded-full dark:bg-white dark:text-black max-w-fit">{readingTime}</p>
+        <p className="px-2 py-1 text-[0.5em] text-white bg-black rounded-full font-display max-w-fit">{readingTime}</p>
     );
 }
 

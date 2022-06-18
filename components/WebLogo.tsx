@@ -1,15 +1,23 @@
+import { motion } from "framer-motion";
 import Link from "next/link";
 
-type Props = {
-    isMenuOpen: boolean;
-}
 
-const WebLogo = ({isMenuOpen}:Props) => {
+const WebLogo = () => {
+
+    const logoVariants = {
+        open: {
+            color: "#fff",
+        },
+        closed: {
+            color: "#fff",
+        }
+    }
+
     return (
         <Link href="/">
-            <a className={ `px-2 py-1 -ml-3 text-xl font-extrabold ${isMenuOpen ? 'text-white bg-black' : 'text-black bg-white'} rounded-none md:ml-1` }>
+            <motion.a variants={logoVariants} className={ `h-10 bg-black uppercase font-display flex flex-col justify-end items-end px-2 py-1 -ml-3 text-xl font-extrabold md:ml-1` }>
                 FFP
-            </a>
+            </motion.a>
         </Link>
     );
 };

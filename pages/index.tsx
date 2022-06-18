@@ -1,63 +1,134 @@
-import { motion } from 'framer-motion'
+import { motion, useAnimation, useMotionValue, useTransform, useViewportScroll } from 'framer-motion'
 import type { NextPage } from 'next'
-import Image from 'next/image'
-import { useEffect, useState } from 'react'
+import { ReactNode, useEffect, useLayoutEffect, useRef, useState } from 'react'
+import { useInView } from 'react-intersection-observer'
 import { Layout } from '../components/Layout'
 import BasicMeta from '../components/meta/BasicMeta'
 import OpenGraphMeta from '../components/meta/OpenGraphMeta'
-import NoSSR from '../components/NoSSR'
 import Config from '../lib/config'
-import myFoto from '../public/images/me-bw.jpg'
-import styles from './index.module.css'
+import myFoto from '../components/assets/images/me-bw.jpg'
 
-const variants = {
-  show: {
-    opacity: 1,
-    y:0,
-    transition: {
-      duration: 0.5,
-      ease: 'easeInOut',
-    },
-  },
-  hide: {
-    opacity: 0.1,
-    y: '10px',
-    transition: {
-      duration: 0.5,
-      ease: 'easeInOut',
-    },
-  }
+
+
+type HeroTextProps = {
+  children: ReactNode,
 }
 
-const url = process.env.NEXT_SITE_URL || Config.site_url
+const HeroText = ({ children }: HeroTextProps) => {
+  const [isVisible, setIsVisible] = useState(false)
+  const ref = useRef<HTMLHeadingElement>(null)
 
-const Home: NextPage = () => {
-
-  const [visible, setVisible] = useState(false)
+  const heroVariants = {
+    show: {
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        ease: 'easeInOut',
+      },
+    },
+    hide: {
+      opacity: 0,
+      transition: {
+        duration: 0.5,
+        ease: 'easeInOut',
+      },
+    }
+  }
 
   useEffect(() => {
     setTimeout(() => {
-      setVisible(true)
-    }, 600)
-    
-  }, [])
+      setIsVisible(true)
+    }
+      , 300)
+  }, [ref])
 
+  return (
+    <motion.h5 ref={ref} variants={heroVariants} initial="hide" animate={isVisible ? 'show' : 'hide'} className='w-full md:static font-display origin-bottom font-bold text-lime-500 md:text-[9rem] leading-[4rem] text-[6rem] text-center md:leading-[10rem]'>{children}<span>.</span></motion.h5>
+  )
+}
+
+
+
+const url = process.env.NEXT_SITE_URL || Config.site_url
+
+
+type IntroProps = {
+  children: React.ReactNode
+}
+
+const IntroductionElement = ({ children }: IntroProps) => {
+
+  const variants = {
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        type: 'spring',
+      }
+    },
+    hidden: {
+      opacity: 0.3,
+
+      transition: {
+        duration: 0.5,
+        type: 'spring',
+      }
+    }
+  }
+
+  const controls = useAnimation()
+  const [ref, inView] = useInView(
+    {
+      rootMargin: '0px',
+      threshold: 1,
+    }
+  );
+
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible')
+    } else {
+      controls.start('hidden')
+    }
+  }, [inView,controls])
+
+
+  return (
+    <motion.p ref={ ref } animate={controls} variants={variants} initial="hidden" className='container min-h-[20rem] text-[1.7rem] leading-[2rem] md:leading-[6rem] font-bold text-justify break-words text-green-500 md:text-[4.5rem] font-display'>{children}.</motion.p>
+  )
+
+}
+
+
+const Home: NextPage = () => {
+
+  const { scrollY } = useViewportScroll()
+  const mastheadRef = useRef<HTMLDivElement>(null)
+  const ref = useRef<HTMLDivElement>(null)
+
+  const mhY = useTransform(scrollY, [0, 1000], [0, -800])
 
 
   return (
     <Layout>
       <BasicMeta />
       <OpenGraphMeta />
-      <div className={`w-full flex flex-col justify-center items-center min-h-screen px-20 py-20 `}>
-          <NoSSR>
-            <motion.h5 variants={variants} initial="hide" animate={visible?'show':'hide'} className='font-display font-bold text-black md:text-[10rem] text-7xl'>Born to Code</motion.h5>
-          <motion.svg className={'absolute -z-10 right-5 w-60 h-auto'}  viewBox="0 0 181 181" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M139.764 149.57L14.9042 103.994L116.803 18.6507L139.764 149.57Z" fill="#51DA7F" stroke="black"/>
-            <path d="M112.873 100.371L49.7331 104.113L108.48 41.7804L112.873 100.371Z" fill="#8E3AE2" stroke="black"/>
-            <path d="M108.477 41.4306L117.6 18.0293" stroke="black" strokeLinecap="round"/>
-            <path d="M47.4952 104.511H14.7324L139.33 150.18L113.021 100.043L47.4952 104.511Z" fill="#EDB72B" stroke="black" strokeLinecap="round"/>
-            </motion.svg>
-          </NoSSR>
+        <motion.section ref={mastheadRef} className='flex flex-col items-center justify-center w-full h-screen -z-30'>
+          <video autoPlay={true} muted playsInline loop className='absolute top-0 left-0 object-cover w-full h-full -z-10 filter brightness-50'>
+            <source src="pexels-oleg-lehnitsky-8323975.mp4" type="video/mp4" />
+          </video>
+          <HeroText>FFP</HeroText>
+          <h5 className='text-2xl font-bold text-center text-white md:text-5xl font-display'>I’m a full-stack developer.</h5>
+        </motion.section>
+        <motion.section ref={ref} style={{ y: mhY }} className='flex flex-col items-center justify-center py-32 bg-white'>
+          <IntroductionElement>My Name is <br/><span className='text-pink-500'>Frans Filasta Pratama</span>.<br/> I'm full-stack developer based in <span className='text-black underline'>Jakarta, Indonesia</span></IntroductionElement>
+        </motion.section>
+      <div className='container w-full'>
+        <motion.img
+        src={myFoto.src}
+        className='z-10 w-full h-auto rounded-3xl -mt-96'
+        
+      />
       </div>
     </Layout>
   )
