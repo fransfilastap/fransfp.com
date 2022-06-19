@@ -57,18 +57,18 @@ const About: NextPage = () => {
                     </motion.div>
                     <motion.article variants={itemVariants} className="flex flex-col w-full space-y-4 md:w-2/3">
                         <section className="flex flex-col space-y-2">
-                            <h5 className="py-1 text-xl font-extrabold text-green-600 border-b-4 border-gray-700 dark:text-white max-w-fit font-display">Work/Activity</h5>
-                            <p className="font-semibold text-justify text-black dark:text-white font-body">Hi,There! I&apos;m Frans. I currently work as information technology officer in one of Indonesia Goverment Office. Through this website I want to share and &quot;dump&quot; anything I want.</p>
-                            <p className="font-semibold text-justify text-black dark:text-white font-body">I love to get involved in digital transformation process anywhere I work (especially in goverment use case). I found joys in solving real-life problems with code.</p>
-                            <p className="font-semibold text-justify text-black dark:text-white font-body">While I&apos;m not in coding mode, I&apos;d love to play with My Kid, or grab my old analog camera to take some picture. </p>
+                            <h5 className="py-1 text-xl font-extrabold text-green-600 border-b-4 border-gray-700 dark:text-white max-w-fit font-display">Work</h5>
+                            <p className="font-semibold text-justify text-black dark:text-white font-body">Saat ini saya bekerja sebagai seorang ASN di salah satu instansi vertikal.</p>
+                            <p className="font-semibold text-justify text-black dark:text-white font-body">Saya sangat menyukai keterlibatan dalam proses transformasi digital (khususnya di instansi pemerintah). Saya menemukan sebuah kesenangan jika dapat memberikan impact kepada tatalaksana pemerintahan.</p>
+                            <p className="font-semibold text-justify text-black dark:text-white font-body">Ketika saya memiliki waktu kosong, alias tidak ngoding, Saya seringkali menghabiskan waktu dengan bermain bersama anak saya. Terkadang saya juga suka mengambil gambar dengan kamera analog/mirrorless/handphone saya.</p>
                         </section>
                         <section className="flex flex-col space-y-2">
                             <h5 className="py-1 text-xl font-extrabold text-green-600 border-b-4 border-gray-700 dark:text-white max-w-fit font-display">Bio</h5>
-                            <p className="flex flex-row space-x-3 font-semibold font-body"><span className="font-extrabold">1993</span> <span>Born in Sungai Liat, Bangka</span></p>
-                            <p className="flex flex-row space-x-3 font-semibold font-body"><span className="font-extrabold">Late 2014</span> <span>Got My Bachelor degree in Information System from Sriwijaya University.</span></p>
-                            <p className="flex flex-row space-x-3 font-semibold font-body"><span className="font-extrabold">2015</span> <span>Got My First Full-time job as engineer at Huawei Services.</span></p>
-                            <p className="flex flex-row space-x-3 font-semibold font-body"><span className="font-extrabold">2016</span> <span>Work at XL Axiata as a Middleware Developer.</span></p>
-                            <p className="flex flex-row space-x-3 font-semibold font-body"><span className="font-extrabold">2018 - Now</span> <span>Serve the nation as Information Technlogy officer.</span></p>
+                            <p className="flex flex-row space-x-3 font-semibold font-body"><span className="font-extrabold">1993</span> <span>Lahir ke dunia fana ini, di Sungai Liat, Bangka.</span></p>
+                            <p className="flex flex-row space-x-3 font-semibold font-body"><span className="font-extrabold">Akhir 2014</span> <span>Menyelesaikan kuliah di jurusan Sistem Informasi Universitas Sriwijaya</span></p>
+                            <p className="flex flex-row space-x-3 font-semibold font-body"><span className="font-extrabold">2015</span> <span>Mendapatkan pekerjaan full time pertama saya sebagai Engineer di Huawei Services.</span></p>
+                            <p className="flex flex-row space-x-3 font-semibold font-body"><span className="font-extrabold">2016</span> <span>Memulai pekerjaan sebagai middleware developer di XL Axiata.</span></p>
+                            <p className="flex flex-row space-x-3 font-semibold font-body"><span className="font-extrabold">2018 - Now</span> <span>Mengabdi secara profesional kepada Negara Tercinta Indonesia 🇲🇨 sebagai staff pengelola teknologi informasi .</span></p>
                         </section>
                         <section className="flex flex-col space-y-2">
                             <h5 className="py-1 text-xl font-extrabold text-green-600 border-b-4 border-gray-700 dark:text-white max-w-fit font-display">WHAT I LOVE</h5>
