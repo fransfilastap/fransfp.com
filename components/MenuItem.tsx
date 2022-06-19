@@ -4,6 +4,8 @@ import { useRouter } from "next/router";
 import React, { useContext, useRef } from "react";
 import { AppContext } from "../store/app-context";
 
+import styles from "./MenuItem.module.css";
+
 type Props ={
     href: string;
     label: string;
@@ -48,7 +50,7 @@ const MenuItem = ({ href, label }: Props) => {
 
     return (
         <Link href={href} passHref>
-            <motion.a ref={ref} variants={itemVariants} className={`text-[2rem] uppercase font-extrabold transition duration-300 ease-in-out font-display md:text-[6rem] hover:text-lime-300 hover:underline hover:underline-offset-2 ${isActive(href) ? 'text-lime-500 underline underline-offset-1':'text-lime-100'}`} onClick={handleClick}>
+            <motion.a ref={ref} variants={itemVariants} className={`${styles['menu-item']} text-[2rem] uppercase font-extrabold transition duration-300 ease-in-out font-display md:text-[6rem] hover:text-lime-300 ${isActive(href) ? 'text-lime-500':'text-lime-100'}`} onClick={handleClick}>
                 {label}
             </motion.a>
         </Link>

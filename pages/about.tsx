@@ -71,7 +71,7 @@ const About: NextPage = () => {
                             <p className="flex flex-row space-x-3 font-semibold font-body"><span className="font-extrabold">2018 - Now</span> <span>Serve the nation as Information Technlogy officer.</span></p>
                         </section>
                         <section className="flex flex-col space-y-2">
-                            <h5 className="py-1 text-xl font-extrabold text-green-600 border-b-4 border-gray-700 dark:text-white max-w-fit font-display">I LOVE TO ...</h5>
+                            <h5 className="py-1 text-xl font-extrabold text-green-600 border-b-4 border-gray-700 dark:text-white max-w-fit font-display">WHAT I LOVE</h5>
                             <p className="font-semibold text-black dark:text-white">Art, Photography, Movies, Code.</p>
                         </section>
                     </motion.article>
