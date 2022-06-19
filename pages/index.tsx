@@ -118,10 +118,10 @@ const Home: NextPage = () => {
             <source src="pexels-oleg-lehnitsky-8323975.mp4" type="video/mp4" />
           </video>
           <HeroText>FFP</HeroText>
-          <h5 className='text-2xl font-bold text-center text-white md:text-5xl font-display'>I’m a full-stack developer.</h5>
+          <h5 className='text-2xl font-bold text-center text-white md:text-5xl font-display'>Seorang full-stack developer.</h5>
         </motion.section>
         <motion.section ref={ref} style={{ y: mhY }} className='flex flex-col items-center justify-center py-32 bg-white'>
-          <IntroductionElement>My Name is <br/><span className='text-pink-500'>Frans Filasta Pratama</span>.<br/> I&apos;m a full-stack developer based in <span className='text-black underline'>Jakarta, Indonesia</span></IntroductionElement>
+          <IntroductionElement>Saya adalah <br/><span className='text-pink-500'>Frans Filasta Pratama</span>.<br/> seorang full-stack developer yang berlokasi di <span className='text-black underline'>Jakarta, Indonesia</span></IntroductionElement>
         </motion.section>
       <div className='container w-full'>
         <motion.img
