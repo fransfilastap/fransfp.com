@@ -48,13 +48,20 @@ export function fetchPostContent(): PostContent[] {
       matterData.fullPath = fullPath;
       matterData.readingTime = readingTime(matterResult.content).text;
 
-      const slug = fileName.replace(/\.mdx$/, "");
+      let slug = fileName.replace(/\.mdx$/, "");
+
+      if (!slug.match(/^(\d{4}-\d{2}-\d{2}-)/)) {
+        throw new Error(`file name should start with date: ${fileName}`);
+      }
+
+      slug = slug.replace(/^(\d{4}-\d{2}-\d{2}-)/, "");
 
       // Validate slug string
       if (matterData.slug !== slug) {
-        throw new Error(
+        throw new Error(`slug should be ${slug} but is ${matterData.slug}`);
+        /* throw new Error(
           "slug field not match with the path of its content source"
-        );
+        ); */
       }
 
       return matterData;

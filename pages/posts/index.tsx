@@ -1,6 +1,4 @@
 import { GetStaticProps, NextPage } from "next";
-import Head from "next/head";
-import { useEffect, useRef } from "react";
 import FFPCard from "../../components/FFPCard";
 import { Layout } from "../../components/Layout";
 import BasicMeta from "../../components/meta/BasicMeta";

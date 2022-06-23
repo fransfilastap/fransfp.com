@@ -33,10 +33,10 @@ const PostLayout = ({ title, date, slug, tags, author, description, children, re
                 <article className="flex flex-col">
                     <section>
                         <ReadingTime readingTime={readingTime} />
-                        <h1 className="mt-3 text-3xl font-bold text-black md:text-5xl font-display dark:text-white">{title}</h1>
-                        <p className="text-lg font-bold text-gray-500 font-display"><Date date={dateString} /></p>
+                        <h1 className="mt-3 text-3xl font-bold text-black md:text-5xl font-body dark:text-white">{title}</h1>
+                        <p className="text-lg font-bold text-gray-500 font-body"><Date date={dateString} /></p>
                     </section>
-                    <section className="flex flex-col mt-10 overflow-x-scroll prose text-justify break-words prose:font-body prose-headings:font-display prose-h1:text-2xl">
+                    <section className="flex flex-col mt-10 overflow-x-scroll prose text-justify break-words prose:font-body prose-headings:font-body prose-h1:text-2xl">
                         {children}
                     </section>
                </article>

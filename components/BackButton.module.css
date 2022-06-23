@@ -1,7 +1,8 @@
 .back{
     position: relative;
     color: #000;
-    transition: color 0.3s ease-in-out;
+    transition: color 0.1s ease-in-out;
+    background-color: transparent;
 }
 
 .back::after {

@@ -12,11 +12,12 @@ type Props = {
 const BasicMeta = ({title,description,url,keywords,author}:Props) => {
     return (
         <Head>
-            <title>{ title ? [title, Config.site_title].join(" | ") : Config.site_title }</title>
+            <title>{ title ? [title, Config.site_title].join(" - ") : Config.site_title }</title>
             <meta name="description" content={description || Config.site_description} />
             <meta name="keywords" content={keywords ? keywords.join(",") : Config.site_keywords.map((it) => it.keyword).join(",")} />
             {author ? <meta name="author" content={author} /> : null}
-            <link rel="canonical" href={Config.site_url + url} />        
+            <link rel="icon" type="image/x-icon" href="/favicon.svg"/>
+            <link rel="canonical" href={url?[Config.site_url,url].join('/'):Config.site_url} />        
         </Head>
     );
 }

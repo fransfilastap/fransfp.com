@@ -54,9 +54,7 @@ export const Navigation = () => {
         <motion.header initial="closed" animate={menuOpen?'open':'closed'} variants={headerVariants} className="fixed z-50 flex flex-wrap items-center justify-center w-full px-2 py-2 ">
                 <div className="flex flex-wrap items-center justify-between w-full pl-4 md:px-20">
                     <div className="flex items-center space-x-9">
-                        <Link href="/">
                          <WebLogo/>
-                      </Link>
                     </div>
                     
                     <div className="flex flex-row items-center justify-between space-x-0 md:space-x-5 ">
@@ -135,7 +133,7 @@ export const Navigation = () => {
                   }
                   },
     }} className="flex flex-row space-x-2">
-                <motion.a href="https://linkedin.com/fransfilastap" className="text-sm font-semibold text-lime-100 hover:underline hover:text-lime-500 hover:underline-offset-4 md:text-xl font-display">LinkedIn</motion.a>
+                <motion.a href="https://www.linkedin.com/in/fransfilastapratama/" className="text-sm font-semibold text-lime-100 hover:underline hover:text-lime-500 hover:underline-offset-4 md:text-xl font-display">LinkedIn</motion.a>
                 <span className="flex items-center text-xl font-bold text-lime-100">.</span>
                 <motion.a className="text-sm font-semibold text-lime-100 hover:underline hover:text-lime-500 hover:underline-offset-4 md:text-xl font-display" href="https://instagram.com/ankrmbg">Instagram</motion.a>
               </motion.div>
