@@ -50,11 +50,12 @@ const About: NextPage = () => {
     return (
         <Layout>
             <BasicMeta title="About Me" />
-            <div className="flex flex-col w-full px-4 mb-10 md:px-20">
-                <motion.div initial="hidden" variants={variants} animate={visible ? 'visible' : 'hidden' } className="flex flex-col items-start justify-start mt-24 space-y-10 md:flex-row md:space-x-10">
-                    <motion.div variants={itemVariants} className="w-full md:w-1/3">
+            <motion.div variants={itemVariants} className="w-full">
                         <FFPCard title="About Me"/>
                     </motion.div>
+            <div className="flex flex-col w-full px-4 mb-10 md:px-20">
+                <motion.div initial="hidden" variants={variants} animate={visible ? 'visible' : 'hidden' } className="flex flex-col items-start justify-start mt-24 space-y-10">
+                    
                     <motion.article variants={itemVariants} className="flex flex-col w-full space-y-4 md:w-2/3">
                         <section className="flex flex-col space-y-2">
                             <h5 className="py-1 text-xl font-extrabold text-green-600 border-b-4 border-gray-700 dark:text-white max-w-fit font-display">Work</h5>

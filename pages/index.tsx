@@ -94,7 +94,7 @@ const IntroductionElement = ({ children }: IntroProps) => {
 
 
   return (
-    <motion.p ref={ ref } animate={controls} variants={variants} initial="hidden" className='container min-h-[20rem] text-[1.7rem] leading-[2rem] md:leading-[6rem] font-bold text-justify break-words text-green-500 md:text-[4.5rem] font-display'>{children}.</motion.p>
+    <motion.p ref={ ref } animate={controls} variants={variants} initial="hidden" className='container min-h-[20rem] text-[1.7rem] leading-[2rem] md:leading-[6rem] font-bold text-justify break-words text-green-500 md:text-[4.5rem] font-mono'>{children}.</motion.p>
   )
 
 }
