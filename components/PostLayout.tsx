@@ -26,7 +26,7 @@ const PostLayout = ({ title, date, slug, tags, author, description, children, re
         <Layout>
             <BasicMeta title={title} description={description} url={`/posts/${slug}`} />
             <OpenGraphMeta title={title} description={description} url={`/posts/${slug}`} />
-            <div className="flex flex-col px-4 md:px-20 my-28 ">
+            <div className="flex flex-col px-4 md:items-center md:px-20 my-28">
                 <div className="flex flex-col items-start justify-start w-full mb-10">
                     <BackButton label="Go back"/>
                 </div>

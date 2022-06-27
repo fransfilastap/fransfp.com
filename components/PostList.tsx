@@ -15,7 +15,7 @@ type Props = {
 
 const PostList = ({ posts, pagination }: Props) => { 
     return (
-        <div className="flex flex-col w-full min-h-screen px-2 mt-2 space-y-5">
+        <div className="flex flex-col w-full min-h-screen px-2 mt-2">
             {posts.map(post => (
                 <PostItem key={post.slug} post={post} />
             ))}

@@ -5,8 +5,8 @@ export const Footer = () => {
     return (
         <footer className="flex flex-col items-center justify-center w-full py-4 mx-auto font-display">
             <div className="flex flex-col items-center w-full p-4 ">
-                <p className="text-sm text-gray-600">&copy; {year} Frans Filasta Pratama.</p>
-                <p className="text-sm text-gray-600"> All Rights Reserved.</p>
+                <p className="text-[0.7em] text-black">&copy; {year} Frans Filasta Pratama.</p>
+                <p className="text-[0.7em] text-black"> All Rights Reserved.</p>
             </div>
         </footer>
     )

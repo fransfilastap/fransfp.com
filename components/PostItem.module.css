@@ -1,0 +1,22 @@
+.post-item{
+    position: relative;
+    border-bottom: 1px solid black;
+}
+
+.post-item::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transform: scaleY(0);
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    background-color: #eee;
+    transform-origin: center;
+    z-index: -1;
+}
+
+.post-item:hover::after{
+    transform: scaleY(1);
+}
