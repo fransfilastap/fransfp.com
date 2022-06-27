@@ -5,7 +5,7 @@ type TagProps = {
 
 const Tag = ({ value,key}:TagProps) => {
     return (
-        <a href={`/tags/${value}`} key={ key } className={`font-mono text-lime-500 underline`}>{ value }</a>
+        <a href={`#`} key={ key } className={`font-mono text-lime-500 underline`}>{ value }</a>
     )
 }
 

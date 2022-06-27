@@ -28,8 +28,8 @@ const Index = ({ posts, pagination }: Props) => {
             <div className="w-full">
                 <FFPCard title="Stories &amp; Ideas" description="Frans Filasta Pratama Blog Posts" />
             </div>
-            <div className="flex flex-col w-full px-2 md:px-20">
-                <div className="flex flex-col items-start justify-start mt-24">
+            <div className="flex flex-col w-full">
+                <div className="flex flex-col items-start justify-start">
                     <div className="flex flex-col w-full">
                         <PostList posts={posts} pagination={{
                             current: 0,
