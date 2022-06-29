@@ -93,7 +93,7 @@ const IntroductionElement = ({ children }: IntroProps) => {
 
 
   return (
-    <motion.p ref={ ref } animate={controls} variants={variants} initial="hidden" className='container min-h-[20rem] text-[1.7rem] leading-[2rem] md:leading-[6rem] font-bold text-justify break-words text-green-500 md:text-[4.5rem] font-mono'>{children}.</motion.p>
+    <motion.p ref={ ref } animate={controls} variants={variants} initial="hidden" className='container min-h-[20rem] text-[1.7rem] leading-[2rem] md:leading-[6rem] font-bold text-justify break-words text-green-500 md:text-[4.5rem] font-display'>{children}.</motion.p>
   )
 
 }
@@ -119,8 +119,8 @@ const Home: NextPage = () => {
           <HeroText>FFP</HeroText>
           <h5 className='text-2xl font-bold text-center text-white md:text-5xl font-display'>Seorang full-stack developer.</h5>
         </motion.section>
-        <motion.section ref={ref} style={{ y: mhY }} className='flex flex-col items-center justify-center py-32 bg-white'>
-          <IntroductionElement>Saya adalah <br/><span className='text-pink-500'>Frans Filasta Pratama</span>.<br/> seorang full-stack developer yang berlokasi di <span className='text-black underline'>Jakarta, Indonesia</span></IntroductionElement>
+        <motion.section ref={ref} style={{ y: mhY }} className='flex flex-col items-center justify-center py-32 bg-black'>
+          <IntroductionElement>Saya adalah <br/><span className='text-pink-500'>Frans Filasta Pratama</span>.<br/> seorang full-stack developer yang berlokasi di <span className='text-white underline'>Jakarta, Indonesia</span></IntroductionElement>
         </motion.section>
       <div className='container w-full'>
         <motion.img

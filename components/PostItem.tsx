@@ -28,7 +28,7 @@ const PostItem = ({ post }: PostItemProps) => {
                 </div>
             </div>
             <svg className="hidden transition duration-200 ease-in-out delay-100 opacity-0 md:block group-hover:opacity-100 h-52 w-52" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M246 10L48 208M79 10H246V177" className="stroke-pink-500" strokeWidth="10"/>
+                <path d="M246 10L48 208M79 10H246V177" className="stroke-lime-500" strokeWidth="10"/>
             </svg>
         </div>
     );
