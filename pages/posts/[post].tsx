@@ -42,7 +42,7 @@ export default function Post({
 }: Props) {
     
     return (
-        <PostLayout title={title} date={dateString} slug={slug} tags={[]} author={author} readingTime={readingTime}>
+      <PostLayout title={title} date={dateString} description={ description} slug={slug} tags={tags} author={author} readingTime={readingTime}>
         <MDXRemote compiledSource={source.compiledSource} />
         </PostLayout>
     );

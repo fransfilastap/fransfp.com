@@ -6,6 +6,7 @@ import { Layout } from "./Layout";
 import BasicMeta from "./meta/BasicMeta";
 import OpenGraphMeta from "./meta/OpenGraphMeta";
 import ReadingTime from "./ReadingTime";
+import Tag from "./Tag";
 
 type Props = {
   title: string;
@@ -34,8 +35,13 @@ const PostLayout = ({ title, date, slug, tags, author, description, children, re
                     <section>
                         <ReadingTime readingTime={readingTime} />
                         <h1 className="mt-3 text-3xl font-bold text-black md:text-5xl font-body dark:text-white">{title}</h1>
-                        <p className="font-mono text-lg font-bold text-gray-500"><Date date={dateString} /></p>
+                        <p className="flex flex-row space-x-2 font-mono text-lg font-bold text-gray-500"><Date date={dateString} /></p>
                     </section>
+                    <div className="flex flex-row space-x-3">
+                    {tags.map(e => (
+                    <Tag key={ e } value={e} />
+                ))}
+                </div>
                     <section className="flex flex-col mt-10 overflow-x-scroll prose text-justify break-words prose:font-mono prose-headings:font-body prose-h1:text-2xl">
                         {children}
                     </section>
