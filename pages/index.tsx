@@ -9,7 +9,6 @@ import Config from '../lib/config'
 import myFoto from '../components/assets/images/me-bw.jpg'
 
 
-
 type HeroTextProps = {
   children: ReactNode,
 }

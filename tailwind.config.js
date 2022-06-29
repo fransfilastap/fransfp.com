@@ -8,7 +8,7 @@ module.exports = {
     fontFamily: {
       display: ["Krona One", "sans-serif"],
       body: ["Montserrat", "sans-serif"],
-      mono: ['Source Code Pro','ui-monospace', 'SFMono-Regular','monospace'],
+      mono: ['Noto Sans Mono','ui-monospace', 'SFMono-Regular','monospace'],
     },
     container: {
       center: true,

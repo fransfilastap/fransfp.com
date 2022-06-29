@@ -29,6 +29,7 @@ const slugToPostContent = (postContents => {
   return hash;
 })(fetchPostContent());
 
+
 export default function Post({
     title,
     dateString,
@@ -42,7 +43,7 @@ export default function Post({
     
     return (
         <PostLayout title={title} date={dateString} slug={slug} tags={[]} author={author} readingTime={readingTime}>
-            <MDXRemote compiledSource={source.compiledSource}/>
+        <MDXRemote compiledSource={source.compiledSource} />
         </PostLayout>
     );
 
@@ -63,8 +64,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     const {content,data} = matter(source, {
         engines: { yaml: (s) => yaml.load(s, { schema: yaml.JSON_SCHEMA }) as object }
     });
-
-
 
     const mdxSource = await serialize(content, { scope: data });
     const readTime = readingTime(content).text;
