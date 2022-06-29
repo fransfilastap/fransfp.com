@@ -50,30 +50,30 @@ const About: NextPage = () => {
     return (
         <Layout>
             <BasicMeta title="About Me" />
-            <motion.div variants={itemVariants} className="w-full">
+            <div className="flex flex-col w-full mt-16 md:flex-row md:space-x-6">
+                <motion.div variants={itemVariants}>
                         <FFPCard title="About Me"/>
                     </motion.div>
-            <div className="flex flex-col w-full px-4 mb-10 md:px-20">
-                <motion.div initial="hidden" variants={variants} animate={visible ? 'visible' : 'hidden' } className="flex flex-col items-start justify-start mt-24 space-y-10">
+                <motion.div initial="hidden" variants={variants} animate={visible ? 'visible' : 'hidden'} className="flex flex-col items-start justify-start space-y-10">
                     
                     <motion.article variants={itemVariants} className="flex flex-col w-full space-y-4 md:w-2/3">
                         <section className="flex flex-col space-y-2">
                             <h5 className="py-1 text-xl font-extrabold text-green-600 border-b-4 border-gray-700 dark:text-white max-w-fit font-display">Work</h5>
-                            <p className="font-semibold text-justify text-black dark:text-white font-body">Saat ini saya bekerja sebagai seorang ASN di salah satu instansi vertikal.</p>
-                            <p className="font-semibold text-justify text-black dark:text-white font-body">Saya sangat menyukai keterlibatan dalam proses transformasi digital (khususnya di instansi pemerintah). Saya menemukan sebuah kesenangan jika dapat memberikan impact kepada tatalaksana pemerintahan.</p>
-                            <p className="font-semibold text-justify text-black dark:text-white font-body">Ketika saya memiliki waktu kosong, alias tidak ngoding, Saya seringkali menghabiskan waktu dengan bermain bersama anak saya. Terkadang saya juga suka mengambil gambar dengan kamera analog/mirrorless/handphone saya.</p>
+                            <p className="font-normal text-justify text-black dark:text-white font-body">Saat ini saya bekerja sebagai seorang ASN di salah satu instansi vertikal.</p>
+                            <p className="font-normal text-justify text-black dark:text-white font-body">Saya sangat menyukai keterlibatan dalam proses transformasi digital (khususnya di instansi pemerintah). Saya menemukan sebuah kesenangan jika dapat memberikan impact kepada tatalaksana pemerintahan.</p>
+                            <p className="font-normal text-justify text-black dark:text-white font-body">Ketika saya memiliki waktu kosong, alias tidak ngoding, Saya seringkali menghabiskan waktu dengan bermain bersama anak saya. Terkadang saya juga suka mengambil gambar dengan kamera analog/mirrorless/handphone saya.</p>
                         </section>
                         <section className="flex flex-col space-y-2">
                             <h5 className="py-1 text-xl font-extrabold text-green-600 border-b-4 border-gray-700 dark:text-white max-w-fit font-display">Bio</h5>
-                            <p className="flex flex-row space-x-3 font-semibold font-body"><span className="font-extrabold">1993</span> <span>Lahir ke dunia fana ini, di Sungai Liat, Bangka.</span></p>
-                            <p className="flex flex-row space-x-3 font-semibold font-body"><span className="font-extrabold">Akhir 2014</span> <span>Menyelesaikan kuliah di jurusan Sistem Informasi Universitas Sriwijaya</span></p>
-                            <p className="flex flex-row space-x-3 font-semibold font-body"><span className="font-extrabold">2015</span> <span>Mendapatkan pekerjaan full time pertama saya sebagai Engineer di Huawei Services.</span></p>
-                            <p className="flex flex-row space-x-3 font-semibold font-body"><span className="font-extrabold">2016</span> <span>Memulai pekerjaan sebagai middleware developer di XL Axiata.</span></p>
-                            <p className="flex flex-row space-x-3 font-semibold font-body"><span className="font-extrabold">2018 - Now</span> <span>Mengabdi secara profesional kepada Negara Tercinta Indonesia 🇲🇨 sebagai staff pengelola teknologi informasi .</span></p>
+                            <p className="flex flex-row space-x-3 font-normal font-body"><span className="font-extrabold">1993</span> <span>Lahir ke dunia fana ini, di Sungai Liat, Bangka.</span></p>
+                            <p className="flex flex-row space-x-3 font-normal font-body"><span className="font-extrabold">Akhir 2014</span> <span>Menyelesaikan kuliah di jurusan Sistem Informasi Universitas Sriwijaya</span></p>
+                            <p className="flex flex-row space-x-3 font-normal font-body"><span className="font-extrabold">2015</span> <span>Mendapatkan pekerjaan full time pertama saya sebagai Engineer di Huawei Services.</span></p>
+                            <p className="flex flex-row space-x-3 font-normal font-body"><span className="font-extrabold">2016</span> <span>Memulai pekerjaan sebagai middleware developer di XL Axiata.</span></p>
+                            <p className="flex flex-row space-x-3 font-normal font-body"><span className="font-extrabold">2018 - Now</span> <span>Mengabdi secara profesional kepada Negara Tercinta Indonesia 🇲🇨 sebagai staff pengelola teknologi informasi .</span></p>
                         </section>
                         <section className="flex flex-col space-y-2">
                             <h5 className="py-1 text-xl font-extrabold text-green-600 border-b-4 border-gray-700 dark:text-white max-w-fit font-display">WHAT I LOVE</h5>
-                            <p className="font-semibold text-black dark:text-white">Art, Photography, Movies, Code.</p>
+                            <p className="font-normal text-black dark:text-white">Art, Photography, Movies, Code.</p>
                         </section>
                     </motion.article>
                 </motion.div>

@@ -25,11 +25,11 @@ const Index = ({ posts, pagination }: Props) => {
           description="Frans Filasta Pratama Blog Posts"
           url={`${process.env.NEXT_SITE_URL}/posts`}
         />
-            <div className="w-full">
+        <div className="flex flex-col w-full mt-16 md:flex-row md:space-x-6">
+            <div className="w-full md:w-1/3">
                 <FFPCard title="Stories &amp; Ideas" description="Frans Filasta Pratama Blog Posts" />
             </div>
-            <div className="flex flex-col w-full">
-                <div className="flex flex-col items-start justify-start">
+                <div className="flex flex-col items-start justify-start w-full md:w-2/3">
                     <div className="flex flex-col w-full">
                         <PostList posts={posts} pagination={{
                             current: 0,
