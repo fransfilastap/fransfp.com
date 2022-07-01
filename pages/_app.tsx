@@ -14,11 +14,6 @@ function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
     
     const handleRouteChange = (url: string) => {
-      window.scroll({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-      });
       ga.pageview(url);
     };
 
@@ -33,11 +28,13 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, [router.events]);
 
   return (
+    <>
     <AppProvider>
       <ThemeProvider attribute="class">
             <Component {...pageProps} />
         </ThemeProvider>
-    </AppProvider>
+      </AppProvider>
+      </>
   );
 }
 

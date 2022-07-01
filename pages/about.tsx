@@ -54,7 +54,7 @@ const About: NextPage = () => {
                 <motion.div variants={itemVariants}>
                         <FFPCard title="About Me"/>
                     </motion.div>
-                <motion.div initial="hidden" variants={variants} animate={visible ? 'visible' : 'hidden'} className="flex flex-col items-start justify-start space-y-10">
+                <motion.div initial="hidden" variants={variants} animate={visible ? 'visible' : 'hidden'} className="flex flex-col items-start justify-start mx-6 mt-0 mt-6 space-y-10 md:mx-0">
                     
                     <motion.article variants={itemVariants} className="flex flex-col w-full space-y-4 md:w-2/3">
                         <section className="flex flex-col space-y-2">
