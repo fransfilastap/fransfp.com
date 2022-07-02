@@ -25,7 +25,7 @@ const Index = ({ posts, pagination }: Props) => {
           description="Frans Filasta Pratama Blog Posts"
           url={`${process.env.NEXT_SITE_URL}/posts`}
         />
-        <div className="flex flex-col w-full mt-16 md:flex-row md:space-x-6">
+        <div className="container flex flex-col w-full mt-16 md:flex-row md:space-x-6">
             <div className="w-full md:w-1/3">
                 <FFPCard title="Stories &amp; Ideas" description="Frans Filasta Pratama Blog Posts" />
             </div>

@@ -1,16 +1,10 @@
 .post-item{
     position: relative;
-    border-bottom: 1px solid black;
-    border-left: 1px solid black;
-    border-right: 1px solid black;
-}
-
-.post-item:nth-child(1){
-    border-top: 1px solid black;
 }
 
 .post-item::after{
     content: '';
+    border-radius: 30px;
     position: absolute;
     top: 0;
     left: 0;
@@ -18,7 +12,7 @@
     width: 100%;
     transform: scaleY(0);
     transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-    background-color: black;
+    background-color: rgb(216, 216, 216);
     transform-origin: center;
     z-index: -1;
 }

@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { NextPage } from "next";
 import { useEffect, useState } from "react";
 import FFPCard from "../components/FFPCard";
+import Heading from "../components/Heading";
 import { Layout } from "../components/Layout";
 import BasicMeta from "../components/meta/BasicMeta";
 
@@ -50,30 +51,30 @@ const About: NextPage = () => {
     return (
         <Layout>
             <BasicMeta title="About Me" />
-            <div className="flex flex-col w-full mt-16 md:flex-row md:space-x-6">
+            <div className="container flex flex-col mt-16 w-100 md:flex-row md:space-x-6">
                 <motion.div variants={itemVariants}>
                         <FFPCard title="About Me"/>
                     </motion.div>
-                <motion.div initial="hidden" variants={variants} animate={visible ? 'visible' : 'hidden'} className="flex flex-col items-start justify-start mx-6 mt-0 mt-6 space-y-10 md:mx-0">
+                <motion.div initial="hidden" variants={variants} animate={visible ? 'visible' : 'hidden'} className="flex flex-col items-start justify-start mx-6 mt-6 space-y-10 md:mx-0">
                     
                     <motion.article variants={itemVariants} className="flex flex-col w-full space-y-4 md:w-2/3">
                         <section className="flex flex-col space-y-2">
-                            <h5 className="py-1 text-xl font-extrabold text-green-600 border-b-4 border-gray-700 dark:text-white max-w-fit font-display">Work</h5>
-                            <p className="font-normal text-justify text-black dark:text-white font-body">Saat ini saya bekerja sebagai seorang ASN di salah satu instansi vertikal.</p>
-                            <p className="font-normal text-justify text-black dark:text-white font-body">Saya sangat menyukai keterlibatan dalam proses transformasi digital (khususnya di instansi pemerintah). Saya menemukan sebuah kesenangan jika dapat memberikan impact kepada tatalaksana pemerintahan.</p>
-                            <p className="font-normal text-justify text-black dark:text-white font-body">Ketika saya memiliki waktu kosong, alias tidak ngoding, Saya seringkali menghabiskan waktu dengan bermain bersama anak saya. Terkadang saya juga suka mengambil gambar dengan kamera analog/mirrorless/handphone saya.</p>
+                            <Heading text="Pekerjaan"/>
+                            <p className="text-sm text-justify text-black dark:text-white font-display">Saat ini saya bekerja sebagai seorang ASN di salah satu instansi vertikal.</p>
+                            <p className="text-sm text-justify text-black dark:text-white font-display">Saya sangat menyukai keterlibatan dalam proses transformasi digital (khususnya di instansi pemerintah). Saya menemukan sebuah kesenangan jika dapat memberikan impact kepada tatalaksana pemerintahan.</p>
+                            <p className="text-sm text-justify text-black dark:text-white font-display">Ketika saya memiliki waktu kosong, alias tidak ngoding, Saya seringkali menghabiskan waktu dengan bermain bersama anak saya. Terkadang saya juga suka mengambil gambar dengan kamera analog/mirrorless/handphone saya.</p>
                         </section>
                         <section className="flex flex-col space-y-2">
-                            <h5 className="py-1 text-xl font-extrabold text-green-600 border-b-4 border-gray-700 dark:text-white max-w-fit font-display">Bio</h5>
-                            <p className="flex flex-row space-x-3 font-normal font-body"><span className="font-extrabold">1993</span> <span>Lahir ke dunia fana ini, di Sungai Liat, Bangka.</span></p>
-                            <p className="flex flex-row space-x-3 font-normal font-body"><span className="font-extrabold">Akhir 2014</span> <span>Menyelesaikan kuliah di jurusan Sistem Informasi Universitas Sriwijaya</span></p>
-                            <p className="flex flex-row space-x-3 font-normal font-body"><span className="font-extrabold">2015</span> <span>Mendapatkan pekerjaan full time pertama saya sebagai Engineer di Huawei Services.</span></p>
-                            <p className="flex flex-row space-x-3 font-normal font-body"><span className="font-extrabold">2016</span> <span>Memulai pekerjaan sebagai middleware developer di XL Axiata.</span></p>
-                            <p className="flex flex-row space-x-3 font-normal font-body"><span className="font-extrabold">2018 - Now</span> <span>Mengabdi secara profesional kepada Negara Tercinta Indonesia 🇲🇨 sebagai staff pengelola teknologi informasi .</span></p>
+                            <Heading text="Bio"/>
+                            <p className="flex flex-row space-x-3 font-sm"><span className="font-extrabold font-body">1993</span> <span className="text-sm font-display">Lahir ke dunia fana ini, di Sungai Liat, Bangka.</span></p>
+                            <p className="flex flex-row space-x-3 font-sm"><span className="font-extrabold font-body">Akhir 2014</span> <span className="text-sm font-display">Menyelesaikan kuliah di jurusan Sistem Informasi Universitas Sriwijaya</span></p>
+                            <p className="flex flex-row space-x-3 font-sm"><span className="font-extrabold font-body">2015</span> <span className="text-sm font-display">Mendapatkan pekerjaan full time pertama saya sebagai Engineer di Huawei Services.</span></p>
+                            <p className="flex flex-row space-x-3 font-sm"><span className="font-extrabold font-body">2016</span> <span className="text-sm font-display">Memulai pekerjaan sebagai middleware developer di XL Axiata.</span></p>
+                            <p className="flex flex-row space-x-3 font-sm"><span className="font-extrabold font-body">2018 - Now</span> <span className="text-sm font-display">Mengabdi secara profesional kepada Negara Tercinta Indonesia 🇲🇨 sebagai staff pengelola teknologi informasi .</span></p>
                         </section>
                         <section className="flex flex-col space-y-2">
-                            <h5 className="py-1 text-xl font-extrabold text-green-600 border-b-4 border-gray-700 dark:text-white max-w-fit font-display">WHAT I LOVE</h5>
-                            <p className="font-normal text-black dark:text-white">Art, Photography, Movies, Code.</p>
+                            <Heading text="Hobi"/>
+                            <p className="text-sm font-normal text-black font-display">Art, Photography, Movies, Code.</p>
                         </section>
                     </motion.article>
                 </motion.div>
