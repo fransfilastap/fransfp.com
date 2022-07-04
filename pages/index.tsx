@@ -119,16 +119,9 @@ const Home: NextPage = () => {
           <HeroText>FFP</HeroText>
           <h5 className='text-2xl font-bold text-center text-white md:text-5xl font-display'>Seorang full-stack developer.</h5>
         </motion.section>
-        <motion.section ref={ref} style={{ y: mhY }} className='flex flex-col items-center justify-center py-32 bg-black'>
+        <section className='flex flex-col items-center justify-center py-32 bg-black'>
           <IntroductionElement>Saya adalah <br/><span className='text-pink-500'>Frans Filasta Pratama</span>.<br/> seorang full-stack developer yang berlokasi di <span className='text-white underline'>Jakarta, Indonesia</span></IntroductionElement>
-        </motion.section>
-      <div className='container w-full'>
-        <motion.img
-        src={myFoto.src}
-        className='z-10 w-full h-auto rounded-3xl -mt-96'
-        
-      />
-      </div>
+        </section>
     </Layout>
   )
 }

@@ -12,7 +12,6 @@
     width: 100%;
     transform: scaleY(0);
     transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-    background-color: rgb(216, 216, 216);
     transform-origin: center;
     z-index: -1;
 }

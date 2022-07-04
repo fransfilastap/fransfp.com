@@ -12,7 +12,7 @@ type PostItemProps = {
 }
 const PostItem = ({ post }: PostItemProps) => {
     return (
-        <div className={`cursor-pointer flex flex-col md:items-center md:justify-start md:space-x-10 w-full space-y-[0.1rem] py-3 ${styles['post-item']} group`}>
+        <div className={`cursor-pointer flex flex-col md:items-center md:justify-start md:space-x-10 w-full space-y-[0.1rem] py-3 ${styles['post-item']} group after:bg-purple-400`}>
             <div className="flex flex-col w-full space-y-1 md:w-5/6">
                 <ReadingTime readingTime={post.readingTime} />
                 <Link href={`/posts/${post.slug}`}>
